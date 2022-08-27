@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Display Current Time Using HTML CSS And JavaScript</title>
+    <style type="text/css">
+      @import url('https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&display=swap');
+      *{
+      font-family: 'Lora', serif;
+      }
+      body{
+      background: url(https://unsplash.com/photos/ZSPMVA1AGWo/download?ixid=MnwxMjA3fDB8MXxhbGx8Mzg0fHx8fHx8Mnx8MTY2MTYyMzMyNQ&force=true&w=1920) center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100vh;
+      margin: 0;
+      }
+      .content{
+      background: rgba(0, 0, 0, 0.5);
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      }
+      h5{
+      color: #fff;
+      font-size: 24px;
+      font-style: italic;
+      margin: 0;
+      }
+      h3{
+      color: #fff;
+      margin: 0;
+      font-size: 160px;
+      font-weight: 6;
+      }
+      @media(max-width: 992px){
+      h3{
+      font-size: 100px;
+      }
+      h5{
+      font-size: 18px;
+      }
+      }
+      @media(max-width: 475px){
+      h3{
+      font-size: 70px;
+      }
+      h5{
+      font-size: 14px;
+      }
+      }
+      @media(max-width: 575px){
+      h3{
+      font-size: 60px;
+      }
+      h5{
+      font-size: 12px;
+      }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <h3 id="showTime"></h3>
+      <h5>“The most precious resource we all have is time.” — Steve Jobs</h5>
+    </div>
+    <script type="text/javascript">
+      let showTime = document.getElementById('showTime');
+      	setInterval(() => {
+      		let time = new Date().toLocaleTimeString().replace("/.*(\d{2}:\d{2}:\d{2}).*/", "$1");
+      		
+      			showTime.innerText = time
+      	},1000)
+    </script>
+  </body>
+</html>
